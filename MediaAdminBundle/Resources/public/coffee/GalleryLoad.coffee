@@ -7,9 +7,9 @@ GalleryLoad = (link, target) ->
     url: link.data('url')
     method: 'GET'
     success: (response) ->
-      medias = new GalleryElement
+      medias = new MediaElement
       medias.set response
-      new GalleryCollectionView(
+      new MediaCollectionView(
         medias: medias
         title: title
         listUrl: listUrl

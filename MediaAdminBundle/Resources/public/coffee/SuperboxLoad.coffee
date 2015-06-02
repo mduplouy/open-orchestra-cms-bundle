@@ -3,7 +3,7 @@ SuperboxLoad = (folderId, mediaId) ->
     url: appRouter.generateUrl('apiMediaEdit', mediaId: mediaId)
     method: 'GET'
     success: (response) ->
-      mediaModel = new GalleryModel
+      mediaModel = new MediaModel
       mediaModel.set response
       new SuperboxView(
         media: mediaModel
