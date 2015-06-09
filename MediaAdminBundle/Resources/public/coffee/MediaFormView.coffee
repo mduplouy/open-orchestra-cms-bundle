@@ -1,4 +1,4 @@
-mediaFormView = OrchestraView.extend(
+MediaFormView = OrchestraView.extend(
   events:
     'submit': 'addEventOnForm'
 
@@ -30,7 +30,7 @@ mediaFormView = OrchestraView.extend(
       context:
         button: $(".submit_form",event.currentTarget).parent()
       success: (response) ->
-        new mediaFormView(viewContext.addOption(
+        new MediaFormView(viewContext.addOption(
           html: response
         ))
     return

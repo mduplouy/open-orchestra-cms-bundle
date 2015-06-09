@@ -40,7 +40,7 @@ MediaModalView = OrchestraView.extend(
       url: $(event.target).attr('data-url')
       method: 'GET'
       success: (response) ->
-        new mediaFormView(
+        new MediaFormView(
           html: response
           domContainer: domContainer
           title: $.trim(folderName)

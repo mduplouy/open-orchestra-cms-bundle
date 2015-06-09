@@ -1,4 +1,5 @@
-GalleryLoad = (link, target) ->
+GalleryLoad = (link, target, galleryView) ->
+  galleryView = galleryView or GalleryCollectionView;
   if typeof target is "undefined"
     target = "#content"
   title = link.text()
@@ -7,13 +8,12 @@ GalleryLoad = (link, target) ->
     url: link.data('url')
     method: 'GET'
     success: (response) ->
-      medias = new MediaElement
+      medias = new GalleryElement
       medias.set response
-      new MediaCollectionView(
+      new galleryView(
         medias: medias
         title: title
         listUrl: listUrl
         domContainer: $(target)
         modal: target != '#content'
       )
-
