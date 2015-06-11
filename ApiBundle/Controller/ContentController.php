@@ -113,6 +113,12 @@ class ContentController extends BaseController
         );
 
         $repository =  $this->get('open_orchestra_model.repository.content');
+
+        if ($request->get('entityId') && $request->get('language') && $request->get('version')) {
+            $element = $this->findOneContent($request->get('entityId'), $request->get('language'), $request->get('version'));
+            return $this->get('open_orchestra_api.transformer_manager')->get('content')->transform($element);
+        }
+
         $contentCollection = $repository->findByContentTypeInLastVersionForPaginateAndSearch($contentType, $columnsNameToEntityAttribute, $columns, $search, $order, $skip, $limit);
         $recordsTotal = $repository->countByContentTypeInLastVersion($contentType);
         $recordsFiltered = $repository->countByContentTypeInLastVersionWithSearchFilter($contentType, $columnsNameToEntityAttribute, $columns, $search);
