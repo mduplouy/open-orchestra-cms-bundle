@@ -92,7 +92,7 @@ class ContentManagerTest extends \PHPUnit_Framework_TestCase
      */
     public function testInitializeNewContent($contentType, $language)
     {
-        Phake::when($this->contextManager)->getDefaultLocale()->thenReturn($language);
+        Phake::when($this->contextManager)->getCurrentLocale()->thenReturn($language);
 
         $content = $this->manager->initializeNewContent($contentType, $language);
 

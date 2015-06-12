@@ -48,7 +48,7 @@ class ContentManager
         $contentClass = $this->contentClass;
         /** @var ContentInterface $content */
         $content = new $contentClass();
-        $content->setLanguage($this->contextManager->getDefaultLocale());
+        $content->setLanguage($this->contextManager->getCurrentLocale());
         $content->setContentType($contentType);
 
         return $content;
