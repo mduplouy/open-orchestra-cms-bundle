@@ -7,6 +7,7 @@ OrchestraViewConfigurator = ->
     'addBlock': BlockView
     'addButtonAction': TableviewAction
     'addConfigurationButton': PageConfigurationButtonView
+    'showTableCollection': TableviewCollectionView
     'showAdminForm': adminFormView
     'showBlocksPanel': BlocksPanelView
     'showNode': NodeView
@@ -16,6 +17,7 @@ OrchestraViewConfigurator = ->
     'showPreviewLinks': PreviewLinkView
     'showStatus': StatusView
     'showVersion': VersionView
+    'showVersionSelect': VersionSelectView
     'showOrchestraModal': OrchestraModalView
     'addFolderConfigurationButton': FolderConfigurationButtonView
     'addFolderDeleteButton': FolderDeleteButtonView

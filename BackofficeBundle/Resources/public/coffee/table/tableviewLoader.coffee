@@ -15,17 +15,18 @@ tableViewLoad = (link, entityType, page, entityId, language, version, sourceLang
   order = link.data('order').replace(/\s/g, '').split(",") if link.data('order') != undefined
   title = link.text()
   if !entityId?
-    new TableviewCollectionView(
-      displayedElements: displayedElements
-      translatedHeader: translatedHeader || displayedElements
-      visibleElements: visibleElements || []
-      order: order
-      title: title
-      page: page
-      url : link.data('url')
-      entityType: entityType
-      domContainer: $("#content")
-    )
+    viewClass = appConfigurationView.getConfiguration(entityType, 'showTableCollection')
+    new viewClass(
+        displayedElements: displayedElements
+        translatedHeader: translatedHeader || displayedElements
+        visibleElements: visibleElements || []
+        order: order
+        title: title
+        page: page
+        url : link.data('url')
+        entityType: entityType
+        domContainer: $("#content")
+      )
   else
     $.ajax
       url: link.data('url')
