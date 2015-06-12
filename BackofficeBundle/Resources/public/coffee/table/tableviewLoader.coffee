@@ -62,7 +62,7 @@ tableViewLoad = (link, entityType, page, entityId, language, version, sourceLang
                     entityType: entityType
                     element: element
                     domContainer: $('#content')
-                  viewClass = appConfigurationView.getConfiguration(entityType, 'edit')
+                  viewClass = appConfigurationView.getConfiguration(entityType, 'editEntity')
                   new viewClass(options)
 
 tableViewLoadSpecificElement = (link, title, entityType) ->
@@ -89,7 +89,7 @@ tableViewLoadSpecificElement = (link, title, entityType) ->
             entityType: entityType
             element: element
             domContainer: $('#content')
-          viewClass = appConfigurationView.getConfiguration(entityType, 'edit')
+          viewClass = appConfigurationView.getConfiguration(entityType, 'editEntity')
           new viewClass(options)
     error: ->
       displayed = false
